@@ -32,6 +32,34 @@
     color: var(--color-texto-suave);
     font-size: 1rem;
 }
+.jugador-revelado {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    padding: 0.875rem;
+    border: 0.0625rem solid var(--color-borde);
+    background-color: var(--color-superficie-suave);
+    border-radius: var(--radio);
+}
+.foto-revelada {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+}
+.detalle-revelado {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+}
+.nombre-revelado {
+    color: var(--color-texto);
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+.club-revelado {
+    color: var(--color-texto-suave);
+    font-size: 0.875rem;
+}
 .modal-acciones {
     display: flex;
     flex-wrap: wrap;
