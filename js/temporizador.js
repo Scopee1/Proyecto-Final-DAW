@@ -24,8 +24,12 @@ function actualizarTemporizador() {
 }
 // Detiene la cuenta del tiempo al terminar la partida.
 function detenerTemporizador() {
+    if (identificadorDelIntervalo === null) {
+        return;
+    }
     window.clearInterval(identificadorDelIntervalo);
     identificadorDelIntervalo = null;
+    actualizarTemporizador();
 }
 // Pone el temporizador en cero y corta la cuenta de la partida anterior.
 function reiniciarTemporizador() {
