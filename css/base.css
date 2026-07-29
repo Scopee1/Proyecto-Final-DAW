@@ -95,6 +95,11 @@ body {
     color: var(--color-texto-suave);
     font-size: 1rem;
 }
+.subtitulo {
+    color: var(--color-texto);
+    font-size: 1.25rem;
+    font-weight: 700;
+}
 .pie {
     display: flex;
     justify-content: center;
