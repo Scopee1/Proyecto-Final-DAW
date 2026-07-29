@@ -53,6 +53,21 @@
                 <ul class="lista-sugerencias oculto" id="lista-sugerencias"></ul>
                 <p class="mensaje-error oculto" id="error-intento"></p>
             </section>
+            <section class="tablero">
+                <h2 class="subtitulo">Tus intentos</h2>
+                <div class="contenedor-tablero">
+                    <div class="encabezado-tablero">
+                        <span class="celda-encabezado">Jugador</span>
+                        <span class="celda-encabezado">Nacionalidad</span>
+                        <span class="celda-encabezado">Club</span>
+                        <span class="celda-encabezado">Posicion</span>
+                        <span class="celda-encabezado">Edad</span>
+                        <span class="celda-encabezado">Overall</span>
+                        <span class="celda-encabezado">Altura</span>
+                    </div>
+                    <div class="filas-tablero" id="filas-tablero"></div>
+                </div>
+            </section>
         </main>
         <footer class="pie">
             <p class="texto-pie">Proyecto Final Individual &mdash; Desarrollo y Arquitecturas Web 2026</p>
@@ -85,9 +100,40 @@
                 <span class="sugerencia-club"></span>
             </li>
         </template>
+        <template id="plantilla-fila">
+            <div class="fila-intento">
+                <div class="celda">
+                    <img class="celda-imagen" src="" alt="">
+                    <span class="celda-texto"></span>
+                </div>
+                <div class="celda">
+                    <img class="celda-imagen" src="" alt="">
+                    <span class="celda-texto"></span>
+                </div>
+                <div class="celda">
+                    <span class="celda-texto"></span>
+                </div>
+                <div class="celda">
+                    <span class="celda-texto"></span>
+                </div>
+                <div class="celda">
+                    <span class="celda-texto"></span>
+                    <span class="celda-flecha"></span>
+                </div>
+                <div class="celda">
+                    <span class="celda-texto"></span>
+                    <span class="celda-flecha"></span>
+                </div>
+                <div class="celda">
+                    <span class="celda-texto"></span>
+                    <span class="celda-flecha"></span>
+                </div>
+            </div>
+        </template>
         <script src="js/servicio-jugadores.js"></script>
         <script src="js/modales.js"></script>
         <script src="js/autocompletado.js"></script>
+        <script src="js/tablero.js"></script>
         <script src="js/juego.js"></script>
         <script src="js/principal.js"></script>
     </body>
