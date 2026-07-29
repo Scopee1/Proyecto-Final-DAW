@@ -36,6 +36,7 @@ function recibirJugadorSecreto(jugador) {
     jugadorSecreto = jugador;
     partidaEnCurso = true;
     avisoDeCarga.classList.add('oculto');
+    habilitarBuscador(true);
 }
 // Avisa por modal que no se pudo obtener el jugador secreto sin cortar la ejecucion.
 function informarFalloAlBuscarJugadorSecreto(error) {
@@ -49,6 +50,8 @@ function iniciarPartida() {
     intentosRealizados = [];
     partidaEnCurso = false;
     actualizarIntentosRestantes();
+    reiniciarAutocompletado();
+    habilitarBuscador(false);
     avisoDeCarga.classList.remove('oculto');
     pedirJugadorSecreto(recibirJugadorSecreto, informarFalloAlBuscarJugadorSecreto);
 }

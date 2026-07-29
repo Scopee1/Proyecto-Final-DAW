@@ -38,6 +38,66 @@
     flex-wrap: wrap;
     gap: 0.625rem;
 }
+.buscador {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
+.campo-busqueda {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+}
+.entrada-busqueda {
+    flex-grow: 1;
+    flex-basis: 12rem;
+}
+.lista-sugerencias {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 5;
+    flex-direction: column;
+    width: 100%;
+    max-height: 18rem;
+    margin-top: 0.25rem;
+    border: 0.0625rem solid var(--color-borde);
+    background-color: var(--color-superficie);
+    border-radius: var(--radio);
+    box-shadow: 0 0.5rem 1.25rem var(--color-sombra);
+    overflow-y: auto;
+}
+.sugerencia {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0.875rem;
+    border-bottom: 0.0625rem solid var(--color-borde);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.sugerencia:hover {
+    background-color: var(--color-superficie-suave);
+}
+.sugerencia-foto {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+}
+.sugerencia-nombre {
+    flex-grow: 1;
+    color: var(--color-texto);
+    font-size: 0.9375rem;
+    font-weight: 600;
+}
+.sugerencia-club {
+    color: var(--color-texto-suave);
+    text-align: right;
+    font-size: 0.8125rem;
+}
 .aviso-carga {
     display: flex;
     align-items: center;

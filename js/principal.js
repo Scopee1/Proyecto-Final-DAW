@@ -2,6 +2,7 @@
 // Inicializa los modulos de la pagina una vez construido el DOM.
 function iniciarAplicacion() {
     iniciarModales();
+    iniciarAutocompletado();
     iniciarJuego();
 }
 window.addEventListener('DOMContentLoaded', iniciarAplicacion);
