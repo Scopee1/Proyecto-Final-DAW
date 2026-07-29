@@ -7,6 +7,7 @@ function iniciarAplicacion() {
     iniciarTablero();
     iniciarTemporizador();
     iniciarDificultad();
+    iniciarPuntuacion();
     iniciarJuego();
 }
 window.addEventListener('DOMContentLoaded', iniciarAplicacion);
