@@ -25,11 +25,11 @@ function ocultarErrorDelCampo(parrafo) {
 // Valida que el nombre no este vacio y que sea alfanumerico.
 function validarNombre(nombre) {
     if (nombre === '') {
-        mostrarErrorDelCampo(errorDeNombre, 'Ingresa tu nombre.');
+        mostrarErrorDelCampo(errorDeNombre, 'Ingresá tu nombre.');
         return false;
     }
     if (EXPRESION_DE_NOMBRE.test(nombre) !== true) {
-        mostrarErrorDelCampo(errorDeNombre, 'El nombre solo admite letras, numeros y espacios.');
+        mostrarErrorDelCampo(errorDeNombre, 'El nombre solo admite letras, números y espacios.');
         return false;
     }
     ocultarErrorDelCampo(errorDeNombre);
@@ -38,11 +38,11 @@ function validarNombre(nombre) {
 // Valida que el correo tenga un formato de direccion valido.
 function validarCorreo(correo) {
     if (correo === '') {
-        mostrarErrorDelCampo(errorDeCorreo, 'Ingresa tu correo electronico.');
+        mostrarErrorDelCampo(errorDeCorreo, 'Ingresá tu correo electrónico.');
         return false;
     }
     if (EXPRESION_DE_CORREO.test(correo) !== true) {
-        mostrarErrorDelCampo(errorDeCorreo, 'El correo no tiene un formato valido.');
+        mostrarErrorDelCampo(errorDeCorreo, 'El correo no tiene un formato válido.');
         return false;
     }
     ocultarErrorDelCampo(errorDeCorreo);
@@ -51,7 +51,7 @@ function validarCorreo(correo) {
 // Valida que el mensaje supere la cantidad minima de caracteres exigida.
 function validarMensaje(mensaje) {
     if (mensaje.length <= MINIMO_DE_CARACTERES_DEL_MENSAJE) {
-        mostrarErrorDelCampo(errorDeMensaje, 'El mensaje debe tener mas de cinco caracteres.');
+        mostrarErrorDelCampo(errorDeMensaje, 'El mensaje debe tener más de cinco caracteres.');
         return false;
     }
     ocultarErrorDelCampo(errorDeMensaje);

@@ -55,7 +55,7 @@ function recibirJugadorSecreto(jugador) {
 function informarFalloAlBuscarJugadorSecreto(error) {
     partidaEnCurso = false;
     avisoDeCarga.classList.add('oculto');
-    mostrarModalDeError('No se pudo obtener el jugador secreto. Revisa tu conexion y presiona "Nueva partida" para reintentar. Detalle: ' + error.message);
+    mostrarModalDeError('No se pudo obtener el jugador secreto. Revisá tu conexión y presioná "Nueva partida" para reintentar. Detalle: ' + error.message);
 }
 // Indica si el jugador recibido ya fue usado como intento en la partida actual.
 function yaFueIntentado(jugador) {
@@ -157,7 +157,7 @@ function evaluarFinDePartida(jugador) {
         sonarDerrota();
         puntajeDeLaPartida = PUNTAJE_PARTIDA_PERDIDA;
         mostrarPuntaje(puntajeDeLaPartida);
-        terminarPartida('Se acabaron los intentos', 'No pudiste adivinar al jugador secreto en ocho intentos, asi que el puntaje de esta partida es cero.', false);
+        terminarPartida('Se acabaron los intentos', 'No pudiste adivinar al jugador secreto en ocho intentos, así que el puntaje de esta partida es cero.', false);
         return;
     }
     reproducirSonidoDelIntento(jugador);
@@ -181,7 +181,7 @@ function registrarIntento(jugador) {
 function resolverIntentoPorNombre(jugadores) {
     var jugadorEncontrado = buscarCoincidenciaExacta(jugadores, textoDelIntentoPendiente);
     if (jugadorEncontrado === null) {
-        mostrarMensajeDeValidacion(errorDelIntento, 'Ese jugador no existe en el listado. Elegi un nombre de las sugerencias.');
+        mostrarMensajeDeValidacion(errorDelIntento, 'Ese jugador no existe en el listado. Elegí un nombre de las sugerencias.');
         return;
     }
     registrarIntento(jugadorEncontrado);
@@ -194,11 +194,11 @@ function informarFalloAlVerificarIntento(error) {
 function manejarIntento() {
     var textoIngresado = obtenerTextoDelBuscador();
     if (partidaEnCurso !== true) {
-        mostrarMensajeDeValidacion(errorDelIntento, 'Todavia no hay una partida en curso.');
+        mostrarMensajeDeValidacion(errorDelIntento, 'Todavía no hay una partida en curso.');
         return;
     }
     if (textoIngresado === '') {
-        mostrarMensajeDeValidacion(errorDelIntento, 'Escribi el nombre de un jugador para poder intentar.');
+        mostrarMensajeDeValidacion(errorDelIntento, 'Escribí el nombre de un jugador para poder intentar.');
         return;
     }
     ocultarMensajeDeValidacion(errorDelIntento);
