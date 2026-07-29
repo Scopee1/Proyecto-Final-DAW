@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="css/formularios.css">
         <link rel="stylesheet" href="css/modales.css">
         <link rel="stylesheet" href="css/juego.css">
+        <link rel="stylesheet" href="css/historial.css">
     </head>
     <body>
         <header class="cabecera">
@@ -57,6 +58,7 @@
                             <option value="dificil">Dificil</option>
                         </select>
                     </div>
+                    <button class="boton boton-secundario" id="boton-historial" type="button">Historial</button>
                     <button class="boton boton-secundario" id="boton-reiniciar" type="button">Nueva partida</button>
                 </div>
             </section>
@@ -111,6 +113,34 @@
                 </div>
             </div>
         </div>
+        <div class="capa-modal oculto" id="modal-historial">
+            <div class="modal modal-ancho" role="dialog" aria-labelledby="titulo-historial">
+                <h2 class="modal-titulo" id="titulo-historial">Historial de partidas</h2>
+                <div class="campo-orden">
+                    <label class="etiqueta" for="selector-orden">Ordenar por</label>
+                    <select class="entrada selector" id="selector-orden">
+                        <option value="fecha">Fecha y hora</option>
+                        <option value="intentos">Cantidad de intentos</option>
+                    </select>
+                </div>
+                <p class="modal-texto oculto" id="historial-vacio">Todavia no terminaste ninguna partida.</p>
+                <div class="contenedor-historial">
+                    <div class="encabezado-historial">
+                        <span class="celda-encabezado">Jugador</span>
+                        <span class="celda-encabezado">Resultado</span>
+                        <span class="celda-encabezado">Intentos</span>
+                        <span class="celda-encabezado">Duracion</span>
+                        <span class="celda-encabezado">Puntaje</span>
+                        <span class="celda-encabezado">Fecha y hora</span>
+                    </div>
+                    <div class="filas-historial" id="filas-historial"></div>
+                </div>
+                <div class="modal-acciones">
+                    <button class="boton boton-secundario" id="boton-borrar-historial" type="button">Borrar historial</button>
+                    <button class="boton" id="boton-cerrar-historial" type="button">Cerrar</button>
+                </div>
+            </div>
+        </div>
         <div class="capa-modal oculto" id="modal-resultado">
             <div class="modal" role="dialog" aria-labelledby="titulo-resultado">
                 <h2 class="modal-titulo" id="titulo-resultado"></h2>
@@ -142,6 +172,16 @@
                 <span class="sugerencia-nombre"></span>
                 <span class="sugerencia-club"></span>
             </li>
+        </template>
+        <template id="plantilla-partida">
+            <div class="fila-historial">
+                <span class="celda-historial"></span>
+                <span class="celda-historial"></span>
+                <span class="celda-historial"></span>
+                <span class="celda-historial"></span>
+                <span class="celda-historial"></span>
+                <span class="celda-historial"></span>
+            </div>
         </template>
         <template id="plantilla-pista">
             <li class="pista">
@@ -188,6 +228,7 @@
         <script src="js/temporizador.js"></script>
         <script src="js/dificultad.js"></script>
         <script src="js/puntuacion.js"></script>
+        <script src="js/historial.js"></script>
         <script src="js/juego.js"></script>
         <script src="js/principal.js"></script>
     </body>
