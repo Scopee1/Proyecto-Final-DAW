@@ -13,6 +13,19 @@
     --ancho-maximo: 60rem;
     --radio: 0.625rem;
 }
+.tema-oscuro {
+    --color-fondo: #131a22;
+    --color-superficie: #1c242e;
+    --color-superficie-suave: #232d38;
+    --color-borde: #2f3a47;
+    --color-texto: #e8edf3;
+    --color-texto-suave: #9aa7b5;
+    --color-primario: #35a86a;
+    --color-primario-oscuro: #2b8d58;
+    --color-positivo: #35a86a;
+    --color-negativo: #d4574a;
+    --color-sombra: #00000059;
+}
 body {
     display: flex;
     flex-direction: column;
