@@ -3,6 +3,7 @@
 function iniciarAplicacion() {
     iniciarModales();
     iniciarAutocompletado();
+    iniciarTablero();
     iniciarJuego();
 }
 window.addEventListener('DOMContentLoaded', iniciarAplicacion);

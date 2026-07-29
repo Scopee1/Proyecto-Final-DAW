@@ -71,6 +71,10 @@ function manejarClicFueraDelBuscador(evento) {
         limpiarSugerencias();
     }
 }
+// Devuelve el texto escrito en el campo de busqueda sin espacios sobrantes.
+function obtenerTextoDelBuscador() {
+    return entradaDeJugador.value.trim();
+}
 // Habilita o deshabilita el campo de busqueda segun el estado de la partida.
 function habilitarBuscador(habilitado) {
     entradaDeJugador.disabled = habilitado !== true;
