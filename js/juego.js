@@ -82,6 +82,7 @@ function iniciarPartida() {
     intentosRealizados = [];
     partidaEnCurso = false;
     actualizarIntentosRestantes();
+    reiniciarTemporizador();
     limpiarTablero();
     reiniciarAutocompletado();
     ocultarMensajeDeValidacion(errorDelIntento);
@@ -123,6 +124,7 @@ function mostrarResultadoDePartida(titulo, mensaje) {
 // Cierra la partida bloqueando el buscador y mostrando el resultado obtenido.
 function terminarPartida(titulo, mensaje) {
     partidaEnCurso = false;
+    detenerTemporizador();
     habilitarBuscador(false);
     botonIntentar.disabled = true;
     mostrarResultadoDePartida(titulo, mensaje);
@@ -144,6 +146,7 @@ function registrarIntento(jugador) {
         return;
     }
     ocultarMensajeDeValidacion(errorDelIntento);
+    arrancarTemporizador();
     intentosRealizados.push(jugador);
     agregarIntentoAlTablero(jugador, jugadorSecreto);
     actualizarIntentosRestantes();
