@@ -66,3 +66,22 @@
     justify-content: flex-end;
     gap: 0.625rem;
 }
+@media (max-width: 30rem) {
+    .capa-modal {
+        padding: 1rem;
+    }
+    .modal {
+        gap: 0.875rem;
+        padding: 1.25rem;
+    }
+    .modal-titulo {
+        font-size: 1.1875rem;
+    }
+    .foto-revelada {
+        width: 3.25rem;
+        height: 3.25rem;
+    }
+    .modal-acciones {
+        justify-content: stretch;
+    }
+}

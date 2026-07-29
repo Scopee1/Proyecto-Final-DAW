@@ -54,3 +54,15 @@
     border-color: var(--color-negativo);
     color: var(--color-negativo);
 }
+@media (max-width: 48rem) {
+    .encabezado-historial {
+        min-width: 30rem;
+    }
+    .filas-historial {
+        min-width: 30rem;
+    }
+    .celda-historial {
+        padding: 0.375rem 0.25rem;
+        font-size: 0.75rem;
+    }
+}
