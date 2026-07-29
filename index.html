@@ -7,6 +7,7 @@
         <title>Futbolle - Adivina el jugador</title>
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/base.css">
+        <link rel="stylesheet" href="css/modales.css">
     </head>
     <body>
         <header class="cabecera">
@@ -29,5 +30,16 @@
         <footer class="pie">
             <p class="texto-pie">Proyecto Final Individual &mdash; Desarrollo y Arquitecturas Web 2026</p>
         </footer>
+        <div class="capa-modal oculto" id="modal-error">
+            <div class="modal" role="alertdialog" aria-labelledby="titulo-error">
+                <h2 class="modal-titulo" id="titulo-error">Ocurrio un problema</h2>
+                <p class="modal-texto" id="texto-error"></p>
+                <div class="modal-acciones">
+                    <button class="boton" id="boton-cerrar-error" type="button">Entendido</button>
+                </div>
+            </div>
+        </div>
+        <script src="js/modales.js"></script>
+        <script src="js/principal.js"></script>
     </body>
 </html>
