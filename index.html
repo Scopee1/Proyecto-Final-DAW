@@ -44,6 +44,15 @@
                 </div>
             </section>
             <p class="aviso-carga oculto" id="aviso-carga">Buscando un jugador secreto...</p>
+            <section class="buscador">
+                <label class="etiqueta" for="entrada-jugador">Escribi el nombre de un jugador</label>
+                <div class="campo-busqueda">
+                    <input class="entrada entrada-busqueda" id="entrada-jugador" type="text" autocomplete="off" placeholder="Por ejemplo: L. Messi" disabled>
+                    <button class="boton" id="boton-intentar" type="button" disabled>Intentar</button>
+                </div>
+                <ul class="lista-sugerencias oculto" id="lista-sugerencias"></ul>
+                <p class="mensaje-error oculto" id="error-intento"></p>
+            </section>
         </main>
         <footer class="pie">
             <p class="texto-pie">Proyecto Final Individual &mdash; Desarrollo y Arquitecturas Web 2026</p>
@@ -69,8 +78,16 @@
                 </div>
             </div>
         </div>
+        <template id="plantilla-sugerencia">
+            <li class="sugerencia">
+                <img class="sugerencia-foto" src="" alt="">
+                <span class="sugerencia-nombre"></span>
+                <span class="sugerencia-club"></span>
+            </li>
+        </template>
         <script src="js/servicio-jugadores.js"></script>
         <script src="js/modales.js"></script>
+        <script src="js/autocompletado.js"></script>
         <script src="js/juego.js"></script>
         <script src="js/principal.js"></script>
     </body>
