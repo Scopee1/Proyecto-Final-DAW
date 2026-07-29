@@ -7,7 +7,9 @@
         <title>Futbolle - Adivina el jugador</title>
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/base.css">
+        <link rel="stylesheet" href="css/formularios.css">
         <link rel="stylesheet" href="css/modales.css">
+        <link rel="stylesheet" href="css/juego.css">
     </head>
     <body>
         <header class="cabecera">
@@ -26,10 +28,38 @@
                 <h1 class="titulo">Adivina el jugador secreto</h1>
                 <p class="bajada">Tenes ocho intentos para descubrir de que futbolista se trata. Cada intento devuelve pistas sobre su nacionalidad, club, posicion, edad, overall y altura.</p>
             </section>
+            <section class="panel-partida">
+                <ul class="datos-partida">
+                    <li class="dato">
+                        <span class="dato-etiqueta">Jugador</span>
+                        <span class="dato-valor" id="dato-usuario">&mdash;</span>
+                    </li>
+                    <li class="dato">
+                        <span class="dato-etiqueta">Intentos restantes</span>
+                        <span class="dato-valor" id="dato-intentos">8</span>
+                    </li>
+                </ul>
+                <div class="acciones-partida">
+                    <button class="boton boton-secundario" id="boton-reiniciar" type="button">Nueva partida</button>
+                </div>
+            </section>
+            <p class="aviso-carga oculto" id="aviso-carga">Buscando un jugador secreto...</p>
         </main>
         <footer class="pie">
             <p class="texto-pie">Proyecto Final Individual &mdash; Desarrollo y Arquitecturas Web 2026</p>
         </footer>
+        <div class="capa-modal" id="modal-inicio">
+            <div class="modal" role="dialog" aria-labelledby="titulo-inicio">
+                <h2 class="modal-titulo" id="titulo-inicio">Bienvenido a Futbolle</h2>
+                <p class="modal-texto">Ingresa tu nombre para comenzar a jugar. Se usa para registrar el resultado de tus partidas.</p>
+                <label class="etiqueta" for="entrada-usuario">Tu nombre</label>
+                <input class="entrada" id="entrada-usuario" type="text" autocomplete="off" maxlength="20" placeholder="Minimo tres letras">
+                <p class="mensaje-error oculto" id="error-usuario"></p>
+                <div class="modal-acciones">
+                    <button class="boton" id="boton-comenzar" type="button">Comenzar partida</button>
+                </div>
+            </div>
+        </div>
         <div class="capa-modal oculto" id="modal-error">
             <div class="modal" role="alertdialog" aria-labelledby="titulo-error">
                 <h2 class="modal-titulo" id="titulo-error">Ocurrio un problema</h2>
@@ -41,6 +71,7 @@
         </div>
         <script src="js/servicio-jugadores.js"></script>
         <script src="js/modales.js"></script>
+        <script src="js/juego.js"></script>
         <script src="js/principal.js"></script>
     </body>
 </html>
