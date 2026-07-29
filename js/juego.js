@@ -7,6 +7,13 @@ var intentosRealizados = [];
 var partidaEnCurso = false;
 var textoDelIntentoPendiente = '';
 var capaModalDeInicio = null;
+var capaModalDeResultado = null;
+var tituloDelResultado = null;
+var textoDelResultado = null;
+var fotoRevelada = null;
+var nombreRevelado = null;
+var clubRevelado = null;
+var botonJugarDeNuevo = null;
 var entradaDelUsuario = null;
 var errorDelUsuario = null;
 var botonComenzar = null;
@@ -96,6 +103,40 @@ function manejarComienzoDePartida() {
     cerrarModal(capaModalDeInicio);
     iniciarPartida();
 }
+// Devuelve la cantidad de intentos escrita en palabras para armar los mensajes.
+function describirCantidadDeIntentos(cantidad) {
+    if (cantidad === 1) {
+        return 'un intento';
+    }
+    return cantidad + ' intentos';
+}
+// Muestra el modal de resultado revelando quien era el jugador secreto.
+function mostrarResultadoDePartida(titulo, mensaje) {
+    tituloDelResultado.textContent = titulo;
+    textoDelResultado.textContent = mensaje;
+    fotoRevelada.src = jugadorSecreto.photo;
+    fotoRevelada.alt = 'Foto de ' + jugadorSecreto.name;
+    nombreRevelado.textContent = jugadorSecreto.name;
+    clubRevelado.textContent = jugadorSecreto.club + ' - ' + jugadorSecreto.nationality;
+    abrirModal(capaModalDeResultado);
+}
+// Cierra la partida bloqueando el buscador y mostrando el resultado obtenido.
+function terminarPartida(titulo, mensaje) {
+    partidaEnCurso = false;
+    habilitarBuscador(false);
+    botonIntentar.disabled = true;
+    mostrarResultadoDePartida(titulo, mensaje);
+}
+// Evalua si el ultimo intento gano la partida o si se agotaron los intentos.
+function evaluarFinDePartida(jugador) {
+    if (jugador.id === jugadorSecreto.id) {
+        terminarPartida('Ganaste la partida', 'Adivinaste al jugador secreto en ' + describirCantidadDeIntentos(intentosRealizados.length) + '.');
+        return;
+    }
+    if (intentosRealizados.length >= CANTIDAD_MAXIMA_DE_INTENTOS) {
+        terminarPartida('Se acabaron los intentos', 'No pudiste adivinar al jugador secreto en ocho intentos.');
+    }
+}
 // Suma el intento al tablero, lo guarda en la partida y actualiza el contador.
 function registrarIntento(jugador) {
     if (yaFueIntentado(jugador) === true) {
@@ -107,6 +148,7 @@ function registrarIntento(jugador) {
     agregarIntentoAlTablero(jugador, jugadorSecreto);
     actualizarIntentosRestantes();
     reiniciarAutocompletado();
+    evaluarFinDePartida(jugador);
 }
 // Registra el intento solo si el nombre escrito existe en el listado del endpoint.
 function resolverIntentoPorNombre(jugadores) {
@@ -148,6 +190,7 @@ function manejarTeclaEnElBuscador(evento) {
 }
 // Comienza una partida nueva con otro jugador secreto sin recargar la pagina.
 function manejarReinicioDePartida() {
+    cerrarModal(capaModalDeResultado);
     iniciarPartida();
 }
 // Permite confirmar el nombre del usuario presionando la tecla Enter.
@@ -159,6 +202,13 @@ function manejarTeclaEnElNombreDelUsuario(evento) {
 // Guarda las referencias del DOM del juego y activa los eventos de la partida.
 function iniciarJuego() {
     capaModalDeInicio = document.getElementById('modal-inicio');
+    capaModalDeResultado = document.getElementById('modal-resultado');
+    tituloDelResultado = document.getElementById('titulo-resultado');
+    textoDelResultado = document.getElementById('texto-resultado');
+    fotoRevelada = document.getElementById('foto-revelada');
+    nombreRevelado = document.getElementById('nombre-revelado');
+    clubRevelado = document.getElementById('club-revelado');
+    botonJugarDeNuevo = document.getElementById('boton-jugar-de-nuevo');
     entradaDelUsuario = document.getElementById('entrada-usuario');
     errorDelUsuario = document.getElementById('error-usuario');
     botonComenzar = document.getElementById('boton-comenzar');
@@ -170,6 +220,7 @@ function iniciarJuego() {
     avisoDeCarga = document.getElementById('aviso-carga');
     botonComenzar.addEventListener('click', manejarComienzoDePartida);
     botonReiniciar.addEventListener('click', manejarReinicioDePartida);
+    botonJugarDeNuevo.addEventListener('click', manejarReinicioDePartida);
     botonIntentar.addEventListener('click', manejarIntento);
     entradaDelUsuario.addEventListener('keydown', manejarTeclaEnElNombreDelUsuario);
     entradaDeJugador.addEventListener('keydown', manejarTeclaEnElBuscador);
