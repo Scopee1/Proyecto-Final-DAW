@@ -1,0 +1,27 @@
+.etiqueta {
+    display: block;
+    color: var(--color-texto-suave);
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+.entrada {
+    display: block;
+    width: 100%;
+    min-height: 2.5rem;
+    padding: 0.5rem 0.75rem;
+    border: 0.0625rem solid var(--color-borde);
+    background-color: var(--color-superficie);
+    color: var(--color-texto);
+    font-size: 1rem;
+    border-radius: var(--radio);
+    transition: border-color 0.2s ease;
+}
+.entrada:focus {
+    border-color: var(--color-primario);
+    outline: none;
+}
+.mensaje-error {
+    color: var(--color-negativo);
+    font-size: 0.875rem;
+    font-weight: 600;
+}
