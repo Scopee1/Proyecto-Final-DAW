@@ -154,9 +154,6 @@ body {
     background-color: var(--color-superficie-suave);
     color: var(--color-primario);
 }
-.oculto {
-    display: none;
-}
 @media (max-width: 48rem) {
     .cabecera {
         flex-direction: column;
