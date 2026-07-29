@@ -20,6 +20,11 @@
     border-color: var(--color-primario);
     outline: none;
 }
+.selector {
+    width: auto;
+    min-width: 8rem;
+    cursor: pointer;
+}
 .mensaje-error {
     color: var(--color-negativo);
     font-size: 0.875rem;

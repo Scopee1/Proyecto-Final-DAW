@@ -48,6 +48,7 @@ function recibirJugadorSecreto(jugador) {
     avisoDeCarga.classList.add('oculto');
     habilitarBuscador(true);
     botonIntentar.disabled = false;
+    actualizarPistas(jugadorSecreto, 0);
 }
 // Avisa por modal que no se pudo obtener el jugador secreto sin cortar la ejecucion.
 function informarFalloAlBuscarJugadorSecreto(error) {
@@ -83,6 +84,7 @@ function iniciarPartida() {
     partidaEnCurso = false;
     actualizarIntentosRestantes();
     reiniciarTemporizador();
+    reiniciarPistas();
     limpiarTablero();
     reiniciarAutocompletado();
     ocultarMensajeDeValidacion(errorDelIntento);
@@ -150,6 +152,7 @@ function registrarIntento(jugador) {
     intentosRealizados.push(jugador);
     agregarIntentoAlTablero(jugador, jugadorSecreto);
     actualizarIntentosRestantes();
+    actualizarPistas(jugadorSecreto, intentosRealizados.length);
     reiniciarAutocompletado();
     evaluarFinDePartida(jugador);
 }

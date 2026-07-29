@@ -45,7 +45,25 @@
                     </li>
                 </ul>
                 <div class="acciones-partida">
+                    <div class="campo-dificultad">
+                        <label class="etiqueta" for="selector-dificultad">Dificultad</label>
+                        <select class="entrada selector" id="selector-dificultad">
+                            <option value="facil">Facil</option>
+                            <option value="media">Media</option>
+                            <option value="dificil">Dificil</option>
+                        </select>
+                    </div>
                     <button class="boton boton-secundario" id="boton-reiniciar" type="button">Nueva partida</button>
+                </div>
+            </section>
+            <section class="pistas">
+                <div class="pista-foto oculto" id="pista-foto">
+                    <img class="foto-secreta" id="foto-secreta" src="" alt="Foto desenfocada del jugador secreto">
+                    <p class="pista-texto">La foto se aclara con cada intento fallido.</p>
+                </div>
+                <div class="pista-cualidades oculto" id="pista-cualidades">
+                    <h2 class="subtitulo">Pistas reveladas</h2>
+                    <ul class="lista-pistas" id="lista-pistas"></ul>
                 </div>
             </section>
             <p class="aviso-carga oculto" id="aviso-carga">Buscando un jugador secreto...</p>
@@ -121,6 +139,12 @@
                 <span class="sugerencia-club"></span>
             </li>
         </template>
+        <template id="plantilla-pista">
+            <li class="pista">
+                <span class="pista-etiqueta"></span>
+                <span class="pista-valor"></span>
+            </li>
+        </template>
         <template id="plantilla-fila">
             <div class="fila-intento">
                 <div class="celda">
@@ -158,6 +182,7 @@
         <script src="js/autocompletado.js"></script>
         <script src="js/tablero.js"></script>
         <script src="js/temporizador.js"></script>
+        <script src="js/dificultad.js"></script>
         <script src="js/juego.js"></script>
         <script src="js/principal.js"></script>
     </body>
