@@ -135,20 +135,32 @@ function terminarPartida(titulo, mensaje, gano) {
     guardarPartida(nombreDelUsuario, gano, intentosRealizados.length, obtenerDuracionEnSegundos(), puntajeDeLaPartida);
     mostrarResultadoDePartida(titulo, mensaje);
 }
+// Reproduce el sonido que corresponde segun cuantos atributos acerto el intento.
+function reproducirSonidoDelIntento(jugador) {
+    if (contarAtributosCoincidentes(jugador, jugadorSecreto) > 0) {
+        sonarAcierto();
+        return;
+    }
+    sonarFallo();
+}
 // Evalua si el ultimo intento gano la partida o si se agotaron los intentos.
 function evaluarFinDePartida(jugador) {
     if (jugador.id === jugadorSecreto.id) {
         detenerTemporizador();
+        sonarVictoria();
         puntajeDeLaPartida = calcularPuntaje(intentosRealizados.length, obtenerDuracionEnSegundos());
         mostrarPuntaje(puntajeDeLaPartida);
         terminarPartida('Ganaste la partida', 'Adivinaste al jugador secreto en ' + describirCantidadDeIntentos(intentosRealizados.length) + ' y sumaste ' + puntajeDeLaPartida + ' puntos.', true);
         return;
     }
     if (intentosRealizados.length >= CANTIDAD_MAXIMA_DE_INTENTOS) {
+        sonarDerrota();
         puntajeDeLaPartida = PUNTAJE_PARTIDA_PERDIDA;
         mostrarPuntaje(puntajeDeLaPartida);
         terminarPartida('Se acabaron los intentos', 'No pudiste adivinar al jugador secreto en ocho intentos, asi que el puntaje de esta partida es cero.', false);
+        return;
     }
+    reproducirSonidoDelIntento(jugador);
 }
 // Suma el intento al tablero, lo guarda en la partida y actualiza el contador.
 function registrarIntento(jugador) {
