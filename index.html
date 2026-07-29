@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Futbolle, juego de adivinanza de jugadores de futbol basado en el dataset de la catedra.">
-        <title>Futbolle - Adivina el jugador</title>
+        <meta name="description" content="Futbolle, juego de adivinanza de jugadores de fútbol basado en el dataset de la cátedra.">
+        <title>Futbolle - Adiviná el jugador</title>
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/base.css">
         <link rel="stylesheet" href="css/formularios.css">
@@ -28,8 +28,8 @@
         </header>
         <main class="contenido">
             <section class="presentacion">
-                <h1 class="titulo">Adivina el jugador secreto</h1>
-                <p class="bajada">Tenes ocho intentos para descubrir de que futbolista se trata. Cada intento devuelve pistas sobre su nacionalidad, club, posicion, edad, overall y altura.</p>
+                <h1 class="titulo">Adiviná el jugador secreto</h1>
+                <p class="bajada">Tenés ocho intentos para descubrir de qué futbolista se trata. Cada intento devuelve pistas sobre su nacionalidad, club, posición, edad, overall y altura.</p>
             </section>
             <section class="panel-partida">
                 <ul class="datos-partida">
@@ -54,9 +54,9 @@
                     <div class="campo-dificultad">
                         <label class="etiqueta" for="selector-dificultad">Dificultad</label>
                         <select class="entrada selector" id="selector-dificultad">
-                            <option value="facil">Facil</option>
+                            <option value="facil">Fácil</option>
                             <option value="media">Media</option>
-                            <option value="dificil">Dificil</option>
+                            <option value="dificil">Difícil</option>
                         </select>
                     </div>
                     <button class="boton boton-secundario" id="boton-historial" type="button">Historial</button>
@@ -75,7 +75,7 @@
             </section>
             <p class="aviso-carga oculto" id="aviso-carga">Buscando un jugador secreto...</p>
             <section class="buscador">
-                <label class="etiqueta" for="entrada-jugador">Escribi el nombre de un jugador</label>
+                <label class="etiqueta" for="entrada-jugador">Escribí el nombre de un jugador</label>
                 <div class="campo-busqueda">
                     <input class="entrada entrada-busqueda" id="entrada-jugador" type="text" autocomplete="off" placeholder="Por ejemplo: L. Messi" disabled>
                     <button class="boton" id="boton-intentar" type="button" disabled>Intentar</button>
@@ -90,7 +90,7 @@
                         <span class="celda-encabezado">Jugador</span>
                         <span class="celda-encabezado">Nacionalidad</span>
                         <span class="celda-encabezado">Club</span>
-                        <span class="celda-encabezado">Posicion</span>
+                        <span class="celda-encabezado">Posición</span>
                         <span class="celda-encabezado">Edad</span>
                         <span class="celda-encabezado">Overall</span>
                         <span class="celda-encabezado">Altura</span>
@@ -105,9 +105,9 @@
         <div class="capa-modal" id="modal-inicio">
             <div class="modal" role="dialog" aria-labelledby="titulo-inicio">
                 <h2 class="modal-titulo" id="titulo-inicio">Bienvenido a Futbolle</h2>
-                <p class="modal-texto">Ingresa tu nombre para comenzar a jugar. Se usa para registrar el resultado de tus partidas.</p>
+                <p class="modal-texto">Ingresá tu nombre para comenzar a jugar. Se usa para registrar el resultado de tus partidas.</p>
                 <label class="etiqueta" for="entrada-usuario">Tu nombre</label>
-                <input class="entrada" id="entrada-usuario" type="text" autocomplete="off" maxlength="20" placeholder="Minimo tres letras">
+                <input class="entrada" id="entrada-usuario" type="text" autocomplete="off" maxlength="20" placeholder="Mínimo tres letras">
                 <p class="mensaje-error oculto" id="error-usuario"></p>
                 <div class="modal-acciones">
                     <button class="boton" id="boton-comenzar" type="button">Comenzar partida</button>
@@ -124,13 +124,13 @@
                         <option value="intentos">Cantidad de intentos</option>
                     </select>
                 </div>
-                <p class="modal-texto oculto" id="historial-vacio">Todavia no terminaste ninguna partida.</p>
+                <p class="modal-texto oculto" id="historial-vacio">Todavía no terminaste ninguna partida.</p>
                 <div class="contenedor-historial">
                     <div class="encabezado-historial">
                         <span class="celda-encabezado">Jugador</span>
                         <span class="celda-encabezado">Resultado</span>
                         <span class="celda-encabezado">Intentos</span>
-                        <span class="celda-encabezado">Duracion</span>
+                        <span class="celda-encabezado">Duración</span>
                         <span class="celda-encabezado">Puntaje</span>
                         <span class="celda-encabezado">Fecha y hora</span>
                     </div>
@@ -160,7 +160,7 @@
         </div>
         <div class="capa-modal oculto" id="modal-error">
             <div class="modal" role="alertdialog" aria-labelledby="titulo-error">
-                <h2 class="modal-titulo" id="titulo-error">Ocurrio un problema</h2>
+                <h2 class="modal-titulo" id="titulo-error">Ocurrió un problema</h2>
                 <p class="modal-texto" id="texto-error"></p>
                 <div class="modal-acciones">
                     <button class="boton" id="boton-cerrar-error" type="button">Entendido</button>

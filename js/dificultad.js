@@ -49,7 +49,7 @@ function actualizarPistasReveladas(secreto, intentosFallidos) {
         }
     }
     if (listaDePistasReveladas.children.length === 0) {
-        listaDePistasReveladas.appendChild(crearPista('Proxima pista', 'A los dos intentos'));
+        listaDePistasReveladas.appendChild(crearPista('Próxima pista', 'A los dos intentos'));
     }
     bloqueDePistasReveladas.classList.remove('oculto');
 }
@@ -75,16 +75,6 @@ function manejarCambioDeDificultad() {
     dificultadActual = selectorDeDificultad.value;
     guardarTexto(CLAVE_DE_LA_DIFICULTAD, dificultadActual);
     iniciarPartida();
-}
-// Devuelve el nombre de la dificultad actual para mostrarlo en pantalla.
-function obtenerNombreDeLaDificultad() {
-    if (dificultadActual === DIFICULTAD_FACIL) {
-        return 'Facil';
-    }
-    if (dificultadActual === DIFICULTAD_MEDIA) {
-        return 'Media';
-    }
-    return 'Dificil';
 }
 // Guarda las referencias de las pistas y aplica la dificultad recordada.
 function iniciarDificultad() {
