@@ -22,3 +22,19 @@ function leerTexto(clave, valorPorDefecto) {
     }
     return texto;
 }
+// Guarda un objeto en el almacenamiento local convirtiendolo a texto JSON.
+function guardarObjeto(clave, objeto) {
+    guardarTexto(clave, JSON.stringify(objeto));
+}
+// Devuelve el objeto guardado en la clave indicada o el valor por defecto.
+function leerObjeto(clave, valorPorDefecto) {
+    var texto = leerTexto(clave, null);
+    if (texto === null) {
+        return valorPorDefecto;
+    }
+    try {
+        return JSON.parse(texto);
+    } catch (error) {
+        return valorPorDefecto;
+    }
+}

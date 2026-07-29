@@ -127,11 +127,12 @@ function mostrarResultadoDePartida(titulo, mensaje) {
     abrirModal(capaModalDeResultado);
 }
 // Cierra la partida bloqueando el buscador y mostrando el resultado obtenido.
-function terminarPartida(titulo, mensaje) {
+function terminarPartida(titulo, mensaje, gano) {
     partidaEnCurso = false;
     detenerTemporizador();
     habilitarBuscador(false);
     botonIntentar.disabled = true;
+    guardarPartida(nombreDelUsuario, gano, intentosRealizados.length, obtenerDuracionEnSegundos(), puntajeDeLaPartida);
     mostrarResultadoDePartida(titulo, mensaje);
 }
 // Evalua si el ultimo intento gano la partida o si se agotaron los intentos.
@@ -140,13 +141,13 @@ function evaluarFinDePartida(jugador) {
         detenerTemporizador();
         puntajeDeLaPartida = calcularPuntaje(intentosRealizados.length, obtenerDuracionEnSegundos());
         mostrarPuntaje(puntajeDeLaPartida);
-        terminarPartida('Ganaste la partida', 'Adivinaste al jugador secreto en ' + describirCantidadDeIntentos(intentosRealizados.length) + ' y sumaste ' + puntajeDeLaPartida + ' puntos.');
+        terminarPartida('Ganaste la partida', 'Adivinaste al jugador secreto en ' + describirCantidadDeIntentos(intentosRealizados.length) + ' y sumaste ' + puntajeDeLaPartida + ' puntos.', true);
         return;
     }
     if (intentosRealizados.length >= CANTIDAD_MAXIMA_DE_INTENTOS) {
         puntajeDeLaPartida = PUNTAJE_PARTIDA_PERDIDA;
         mostrarPuntaje(puntajeDeLaPartida);
-        terminarPartida('Se acabaron los intentos', 'No pudiste adivinar al jugador secreto en ocho intentos, asi que el puntaje de esta partida es cero.');
+        terminarPartida('Se acabaron los intentos', 'No pudiste adivinar al jugador secreto en ocho intentos, asi que el puntaje de esta partida es cero.', false);
     }
 }
 // Suma el intento al tablero, lo guarda en la partida y actualiza el contador.
