@@ -1,0 +1,56 @@
+.modal-ancho {
+    max-width: 46rem;
+}
+.campo-orden {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+.contenedor-historial {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    width: 100%;
+    max-height: 18rem;
+    padding-bottom: 0.375rem;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+.encabezado-historial {
+    display: flex;
+    gap: 0.375rem;
+    min-width: 36rem;
+}
+.filas-historial {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    min-width: 36rem;
+}
+.fila-historial {
+    display: flex;
+    gap: 0.375rem;
+}
+.celda-historial {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 0.5rem 0.375rem;
+    border: 0.0625rem solid var(--color-borde);
+    background-color: var(--color-superficie-suave);
+    color: var(--color-texto);
+    text-align: center;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    border-radius: var(--radio);
+}
+.celda-ganada {
+    border-color: var(--color-positivo);
+    color: var(--color-positivo);
+}
+.celda-perdida {
+    border-color: var(--color-negativo);
+    color: var(--color-negativo);
+}
