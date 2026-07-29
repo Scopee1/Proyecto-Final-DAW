@@ -23,3 +23,15 @@
     display: flex;
     justify-content: flex-end;
 }
+@media (max-width: 30rem) {
+    .formulario-contacto {
+        gap: 0.875rem;
+        padding: 1.25rem;
+    }
+    .area-texto {
+        min-height: 6.5rem;
+    }
+    .acciones-formulario {
+        justify-content: stretch;
+    }
+}
