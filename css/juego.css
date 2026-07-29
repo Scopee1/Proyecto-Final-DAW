@@ -91,9 +91,6 @@
 .foto-desenfoque-7 {
     filter: blur(0.875rem);
 }
-.foto-desenfoque-8 {
-    filter: blur(1rem);
-}
 .pista-texto {
     max-width: 12rem;
     color: var(--color-texto-suave);

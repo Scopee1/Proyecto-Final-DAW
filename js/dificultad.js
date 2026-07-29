@@ -3,7 +3,7 @@ var CLAVE_DE_LA_DIFICULTAD = 'futbolle-dificultad';
 var DIFICULTAD_FACIL = 'facil';
 var DIFICULTAD_MEDIA = 'media';
 var DIFICULTAD_DIFICIL = 'dificil';
-var DESENFOQUE_MAXIMO = 8;
+var DESENFOQUE_MAXIMO = 7;
 var PISTAS_DEL_MODO_MEDIO = [
     { intentosNecesarios: 2, etiqueta: 'Altura', propiedad: 'heightCm', sufijo: ' cm' },
     { intentosNecesarios: 4, etiqueta: 'Edad', propiedad: 'age', sufijo: ' años' },
