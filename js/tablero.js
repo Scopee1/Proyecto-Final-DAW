@@ -51,6 +51,29 @@ function crearFilaDeIntento(intentado, secreto) {
     completarCelda(celdas[6], intentado.heightCm + ' cm', intentado.heightCm === secreto.heightCm, obtenerFlechaDeComparacion(intentado.heightCm, secreto.heightCm), '', '');
     return fila;
 }
+// Cuenta cuantos atributos del intento coinciden con los del jugador secreto.
+function contarAtributosCoincidentes(intentado, secreto) {
+    var coincidencias = 0;
+    if (intentado.nationality === secreto.nationality) {
+        coincidencias = coincidencias + 1;
+    }
+    if (intentado.club === secreto.club) {
+        coincidencias = coincidencias + 1;
+    }
+    if (intentado.position === secreto.position) {
+        coincidencias = coincidencias + 1;
+    }
+    if (intentado.age === secreto.age) {
+        coincidencias = coincidencias + 1;
+    }
+    if (intentado.overall === secreto.overall) {
+        coincidencias = coincidencias + 1;
+    }
+    if (intentado.heightCm === secreto.heightCm) {
+        coincidencias = coincidencias + 1;
+    }
+    return coincidencias;
+}
 // Agrega al tablero la fila con el resultado del intento recibido.
 function agregarIntentoAlTablero(intentado, secreto) {
     filasDelTablero.appendChild(crearFilaDeIntento(intentado, secreto));
